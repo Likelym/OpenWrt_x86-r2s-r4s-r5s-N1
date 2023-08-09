@@ -10,12 +10,10 @@ Subject: [PATCH] add support
  .../boot/dts/rockchip/rk3399-pico3399.dts     | 668 ++++++++++++++++
  target/linux/rockchip/image/armv8.mk          |  10 +
  ...99-add-support-for-rockchip-pico3399.patch |  11 +
- ...99-add-support-for-rockchip-pico3399.patch |  11 +
  7 files changed, 1462 insertions(+)
  create mode 100644 package/boot/uboot-rockchip/patches/308-rockchip-rk3399-Add-support-for-rockchip-pico3399.patch
  create mode 100644 target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/rk3399-pico3399.dts
  create mode 100644 target/linux/rockchip/patches-5.15/213-rockchip-rk3399-add-support-for-rockchip-pico3399.patch
- create mode 100644 target/linux/rockchip/patches-6.1/213-rockchip-rk3399-add-support-for-rockchip-pico3399.patch
 
 diff --git a/package/boot/uboot-rockchip/Makefile b/package/boot/uboot-rockchip/Makefile
 index 69ce25dae..283f4821b 100644
@@ -1514,33 +1512,14 @@ new file mode 100644
 index 000000000..ddfa7f575
 --- /dev/null
 +++ b/target/linux/rockchip/patches-5.15/213-rockchip-rk3399-add-support-for-rockchip-pico3399.patch
-@@ -0,0 +1,11 @@
+@@ -0,0 +1,8 @@
 +--- a/arch/arm64/boot/dts/rockchip/Makefile
 ++++ b/arch/arm64/boot/dts/rockchip/Makefile
-+@@ -53,6 +53,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-ro
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock-pi-4b.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock-pi-4c.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
-++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-pico3399.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-mpc1903.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64-v2.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
++@@ -58,6 +58,7 @@
 + dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
-diff --git a/target/linux/rockchip/patches-6.1/213-rockchip-rk3399-add-support-for-rockchip-pico3399.patch b/target/linux/rockchip/patches-6.1/213-rockchip-rk3399-add-support-for-rockchip-pico3399.patch
-new file mode 100644
-index 000000000..da314d78d
---- /dev/null
-+++ b/target/linux/rockchip/patches-6.1/213-rockchip-rk3399-add-support-for-rockchip-pico3399.patch
-@@ -0,0 +1,11 @@
-+--- a/arch/arm64/boot/dts/rockchip/Makefile
-++++ b/arch/arm64/boot/dts/rockchip/Makefile
-+@@ -63,6 +63,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-ro
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock-pi-4b-plus.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock-pi-4c.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-king3399.dtb
++ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
++ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399pro-rock-pi-n10.dtb
 ++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-pico3399.dtb
++ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-king3399.dtb
 + dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-mpc1903.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64-v2.dtb
-+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
-网页知识图片视频音乐社交购物
++ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-h3399pc.dtb
